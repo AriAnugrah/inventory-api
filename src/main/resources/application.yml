@@ -1,0 +1,22 @@
+application:
+    data-dir: ${DATA_DIR:inventory-api}
+server.port: 8080
+spring:
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://${DB_HOST:localhost}:3306/springinventory?serverTimezone=UTC
+        username: root
+        password: ayambakar
+    jpa:
+        hibernate.ddl-auto: update
+        generate-ddl: true
+        show-sql: false
+        properties.hibernate.dialect: org.hibernate.dialect.MySQL57Dialect
+    messages.basename: i18n/messages
+    servlet:
+        multipart:
+            max-file-size: 7GB
+            max-request-size: 7GB
+springdoc:
+  swagger-ui:
+      path: /swagger-ui-costum.html
